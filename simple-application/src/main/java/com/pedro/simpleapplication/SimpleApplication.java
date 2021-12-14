@@ -20,6 +20,11 @@ public class SimpleApplication {
     ) {
         return String.format( "{\"message\":\"Hello %s %s\"}", firstName, lastName);
     }
+
+    @PostMapping
+    public String helloPost(@RequestBody HelloRequest request) {
+        return String.format("{\"message:\":\"Hello %s %s\"}", request.getFirstName(), request.getLastName());
+    }
 }
 
 class HelloRequest{
